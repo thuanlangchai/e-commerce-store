@@ -1,1 +1,33 @@
-spring.application.name=web_store
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/web_shop
+    password: langchai297
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 45964691162-6n1vr08djmbod2uovv7vn9pv4q1o2hd4.apps.googleusercontent.com
+            client-secret: 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
+
+server:
+  servlet:
+    context-path: /api/auth
+  port: 8080
+  address: 0.0.0.0
+
+app:
+  jwt:
+    secret: "a444f9b341852ac628965a08f46c31394ed807cd38e21cb7ae2f23c6f02d3f6d"
+    accessTokenExpirationMs: 3600000
+    refreshTokenExpirationMs: 604800000
