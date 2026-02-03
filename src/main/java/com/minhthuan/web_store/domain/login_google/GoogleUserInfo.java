@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * DTO chứa thông tin user từ Google sau khi verify token
- */
+
 @Data
 @Builder
 @NoArgsConstructor

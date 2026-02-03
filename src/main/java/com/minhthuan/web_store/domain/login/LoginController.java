@@ -19,15 +19,7 @@ public class LoginController {
         return ResponseEntity.ok(loginService.login(loginRequest));
     }
 
-    /**
-     * Endpoint để đăng nhập với Google OAuth
-     * 
-     * Frontend gửi Google access token (từ @react-oauth/google)
-     * Backend verify token, lấy thông tin user, tạo/find user, và trả về JWT
-     * 
-     * @param googleLoginRequest: Chứa Google access token
-     * @return LoginResponse với JWT tokens (giống như /login thông thường)
-     */
+
     @PostMapping("/login/google")
     public ResponseEntity<ApiResponse<?>> loginWithGoogle(@RequestBody GoogleLoginRequest googleLoginRequest) {
         return ResponseEntity.ok(loginService.loginWithGoogle(googleLoginRequest));
